@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6293918387450393743, guid: ec5278a01af6bab4dad242b74eccff0b, type: 3}
+      propertyPath: initialBehaviour
+      value: 
+      objectReference: {fileID: 2782257173978096336}
     - target: {fileID: 7228128604707562332, guid: ec5278a01af6bab4dad242b74eccff0b, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -73,3 +77,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5278a01af6bab4dad242b74eccff0b, type: 3}
+--- !u!114 &2782257173978096336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3007691309608911202, guid: ec5278a01af6bab4dad242b74eccff0b, type: 3}
+  m_PrefabInstance: {fileID: 8132965021815938126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd995f45e0c6232499ae4ebfd58abd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

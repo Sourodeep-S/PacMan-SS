@@ -5,11 +5,11 @@ public class AnimatedSpritesRenderer : MonoBehaviour
 {
   public SpriteRenderer spriteRenderer { get; private set; }
   public Sprite[] sprites;
-  public int frame { get; private set; }
+  public int frame;
   public float animationTime = 0.25f;
 
   public bool loop = true;
-
+  
   private void Awake()
   {
     spriteRenderer = GetComponent<SpriteRenderer>();

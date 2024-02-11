@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1635792179899808762}
   - component: {fileID: 2613797742960936205}
-  m_Layer: 0
+  - component: {fileID: 2362065344469710524}
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +87,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2362065344469710524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847466801720271087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570dd3a0bd4a2554e823c490a727db0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  up: {fileID: 21300000, guid: 7e717fb8544bec948908e62885abc81c, type: 3}
+  down: {fileID: 21300000, guid: 3fbc387fb04f75e4f8b3d18599f76338, type: 3}
+  left: {fileID: 21300000, guid: 2b2a037462d0e354cb4c3f3d9df87076, type: 3}
+  right: {fileID: 21300000, guid: d7d336b90c217c149851432edaa8b579, type: 3}
 --- !u!1 &2189212935580981535
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +114,7 @@ GameObject:
   - component: {fileID: 5582429862193336044}
   - component: {fileID: 7228128604707562332}
   - component: {fileID: 8768412535762599689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,6 +205,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: e4c8320ea78ee5b4687bbd4227e5718f, type: 3}
   - {fileID: 21300000, guid: e6e94b2cac16c4c468f7494c44a38498, type: 3}
+  frame: 0
   animationTime: 0.25
   loop: 1
 --- !u!1 &3486140987882410670
@@ -201,7 +219,7 @@ GameObject:
   - component: {fileID: 5608511058395545388}
   - component: {fileID: 1209515484629582649}
   - component: {fileID: 3307085289827272515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,6 +312,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fe565fd258f07d34b816e8ae80b52db5, type: 3}
   - {fileID: 21300000, guid: 18d2b071ef9b1314c85477bd4c68fd24, type: 3}
   - {fileID: 21300000, guid: 16452a56531d4664fa7035b2aa760026, type: 3}
+  frame: 0
   animationTime: 0.25
   loop: 1
 --- !u!1 &5097723266834100089
@@ -313,7 +332,7 @@ GameObject:
   - component: {fileID: -3007691309608911202}
   - component: {fileID: 8873751861592059335}
   - component: {fileID: 8727534775437916405}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ghost_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,6 +452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 200
+  target: {fileID: 0}
+  initialBehaviour: {fileID: 0}
 --- !u!114 &-7130801478515415995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a6badc9cee14b4ea5245d6be1c9837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 0
+  inside: {fileID: 0}
+  outside: {fileID: 0}
 --- !u!114 &-3007691309608911202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd995f45e0c6232499ae4ebfd58abd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 7
 --- !u!114 &8873751861592059335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +494,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c266e4a56bd927d489581707fb082575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 8
+  body: {fileID: 7228128604707562332}
+  eyes: {fileID: 2613797742960936205}
+  blue: {fileID: 7407202707389634013}
+  white: {fileID: 1209515484629582649}
 --- !u!114 &8727534775437916405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbc208fdc5b0d146b61da44ec1119bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 20
 --- !u!1 &6186890026756426521
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +523,7 @@ GameObject:
   - component: {fileID: 3562931211730823105}
   - component: {fileID: 7407202707389634013}
   - component: {fileID: 2922508029294124910}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,5 +614,6 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: fadb78617b47abe4a8d88bcfa0b0ea6e, type: 3}
   - {fileID: 21300000, guid: fe565fd258f07d34b816e8ae80b52db5, type: 3}
+  frame: 0
   animationTime: 0.25
   loop: 1
