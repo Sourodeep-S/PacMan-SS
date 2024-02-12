@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,17 @@ public class GameManager : MonoBehaviour
   public int lives { get; private set; }
   public int ghostMultiplier { get; private set; } = 1;
 
+  public TextMeshProUGUI scoreText;
+  public TextMeshProUGUI livesText;
+  public TextMeshProUGUI gameOverText;
+
+  private PlaySoundEffects sound;
   private MovementController movement;
+
+  private void Awake()
+  {
+    sound = GetComponent<PlaySoundEffects>();
+  }
 
   private void Start()
   {
@@ -20,6 +31,9 @@ public class GameManager : MonoBehaviour
 
   private void NewGame()
   {
+    sound.PlayGameStartSound();
+    gameOverText.gameObject.SetActive(false);
+
     SetScore(0);
     SetLives(3);
     NewRound();
@@ -54,26 +68,32 @@ public class GameManager : MonoBehaviour
 
   private void GameOver()
   {
+    sound.PlayPacmanDeathSound();
+
     foreach (Ghost ghost in this.ghosts)
     {
       ghost.gameObject.SetActive(false);
     }
 
     this.pacman.gameObject.SetActive(false);
+    gameOverText.gameObject.SetActive(true);
   }
 
   private void SetScore(int score)
   {
     this.score = score;
+    scoreText.text = this.score.ToString("D4");
   }
 
   private void SetLives(int lives)
   {
     this.lives = lives;
+    livesText.text = this.lives.ToString();
   }
 
   public void GhostEaten(Ghost ghost)
   {
+    sound.PlayGhostEatenSound();
     int points = ghost.points * this.ghostMultiplier;
     SetScore(this.score + points);
     this.ghostMultiplier++;
@@ -87,18 +107,23 @@ public class GameManager : MonoBehaviour
     SetLives(this.lives - 1);
 
     if (this.lives > 0)
+    {
+      sound.PlayLifeLostSound();
       Invoke(nameof(ResetState), 3f);
+    }
     else
       GameOver();
   }
 
   public void PelletEaten(Pellets pellet)
   {
+    //sound.PlayPelletEatenSound();
     pellet.gameObject.SetActive(false);
     SetScore(this.score + pellet.points);
 
     if (!HasRemainingPellets())
     {
+      sound.PlayIntermissionSound();
       this.pacman.gameObject.SetActive(false);
       Invoke(nameof(NewRound), 6f);
     }
@@ -107,7 +132,8 @@ public class GameManager : MonoBehaviour
 
   public void PowerPelletEaten(PowerPellets powerPellet)
   {
-    foreach(Ghost ghost in this.ghosts)
+    sound.PlayPowerPelletEatenSound();
+    foreach (Ghost ghost in this.ghosts)
     {
       ghost.frightened.Enable(powerPellet.duration);
     }

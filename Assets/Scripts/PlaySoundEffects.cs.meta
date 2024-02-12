@@ -1,2 +1,20 @@
 fileFormatVersion: 2
 guid: a69510f625b2d114d8f34bf6ed408e2c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - src: {instanceID: 0}
+  - pacmanDeath: {fileID: 8300000, guid: 52e6d62af2bcb734e8cf0f6a22b09151, type: 3}
+  - fruitEaten: {fileID: 8300000, guid: e783ab1751f2d0e4a8727baf56c1ef2c, type: 3}
+  - gameStart: {fileID: 8300000, guid: 3b719349b86838345b4e3aaf32f0545e, type: 3}
+  - ghostEaten: {fileID: 8300000, guid: 5c62845238b0a924b9d81715ee6e91a2, type: 3}
+  - intermission: {fileID: 8300000, guid: f73060b2ba0abf947b27e987974d8479, type: 3}
+  - lifeLost: {fileID: 8300000, guid: 601b8f4a0de6c2342b9bf96fa121f821, type: 3}
+  - pelletEaten: {fileID: 8300000, guid: 3c11a99d77110464f80b6114d0cced37, type: 3}
+  - powerPelletEaten: {fileID: 8300000, guid: 065ee03e054486040832b49816a871e5, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
